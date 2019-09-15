@@ -1,11 +1,15 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>BTK - Sistema Bibliotec√°rio</title>
+        <%@include file="./src/core/meta.jsp" %>
+        <title>BTK - Sistema Bibliotec·rio</title>
+        <%@include file="./src/core/head.jsp" %>
     </head>
     <body>
-      
+        <header></header>
+        <main>
+            
+        </main>
+        <%@include file="./src/core/footer.jsp" %>
     </body>
 </html>
