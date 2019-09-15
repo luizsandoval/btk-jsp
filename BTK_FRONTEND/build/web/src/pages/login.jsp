@@ -25,7 +25,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                        
                         <div class="form-group">
                             <label for="SENHA">Senha</label>
-                            <input name="SENHA" class="form-control" placeholder="Digite sua senha..." type="text" required/>
+                            <input name="SENHA" class="form-control" placeholder="Digite sua senha..." type="password" required/>
                         </div>
                     </div>
                 </div>
