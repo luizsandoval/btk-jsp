@@ -17,7 +17,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                        
                         <div class="form-group">
                             <label for="EMAIL">E-mail</label>
-                            <input name="EMAIL" autofocus class="form-control" placeholder="Digite seu e-mail..." type="text" required/>
+                            <input name="EMAIL" autofocus class="form-control email-login" placeholder="Digite seu e-mail..." type="text" required/>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                        
-                        <button disabled type="submit" class="btn btn-block btn-primary">Entrar no BTK</button>
+                        <button disabled type="submit" class="btn btn-block btn-primary btn-entrar">Entrar no BTK</button>
                     </div>
                 </div>
             </form>
