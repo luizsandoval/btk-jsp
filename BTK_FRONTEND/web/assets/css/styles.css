@@ -2,6 +2,7 @@
     --main-color: #b7f8db;
     --second-color: #50a7c2;
     --footer-height: 50px;
+    --header-height: 90px;
 }
 
 *, html {
@@ -11,22 +12,13 @@
     width: 100%;
 }
 
-.row {
-    margin-left: 0px;
-}
-
-.container {
-    height: calc(100vh - var(--footer-height));
-}
-
-.logo-medium {
-    width: 100px;
-    height: auto;
-}
-
 form[name="loginForm"] {
     width: 500px; 
     padding: 60px 15px;
+}
+
+header {
+    background: linear-gradient(to right,var(--main-color), var(--second-color));
 }
 
 footer {
@@ -44,6 +36,45 @@ button[disabled] {
     background: lightgray;
 }
 
+.row {
+    margin-left: 0px;
+}
+
+.container {
+    height: calc(100vh - var(--footer-height) - var(--header-height));
+}
+
+.container.login-page {
+    height: calc(100vh - var(--footer-height));
+}
+
+.navbar-brand {
+    width: auto;
+}
+
+collapse.menu {
+    background: var(--second-color);
+    color: #fff;
+}
+
+.dropdown {
+    width: auto;
+}
+
+.dropdown-menu {
+    width: auto;
+}
+
+.logo-small {
+    width: 80px;
+    height: auto;
+}
+
+.logo-medium {
+    width: 100px;
+    height: auto;
+}
+
 .btn {
     border-radius: 25px;
     border: none;
@@ -58,4 +89,3 @@ button[disabled] {
 .btn.btn-secondary {
     background: transparent;
 }
-

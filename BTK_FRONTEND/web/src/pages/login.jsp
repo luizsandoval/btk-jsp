@@ -6,7 +6,7 @@
         <%@include file="../../src/core/head.jsp" %>
     </head>
     <body>
-        <div class="container d-flex justify-content-center align-items-center flex-direction-column">
+        <div class="container login-page d-flex justify-content-center align-items-center flex-direction-column">
             <form action="" method="post" name="loginForm">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
