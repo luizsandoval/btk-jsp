@@ -21,7 +21,7 @@
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <span>Gerenciar Empréstimos</span>
-            <span class="fas fa-info"></span>
+            <span class="fas fa-arrow-circle-up"></span>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <span>Sair do BTK</span>

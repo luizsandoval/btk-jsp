@@ -27,17 +27,17 @@ header {
 }
 
 #overlay {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-  cursor: pointer;
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
 }
 
 footer {
@@ -143,4 +143,23 @@ collapse.menu.collapsing {
 
 .btn-secondary.focus, .btn-secondary:focus {
     box-shadow: none;
+}
+
+.btn-link {
+    color: var(--second-color);
+}
+.btn-block{
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.3s;
+}
+.btn-entrar:hover{
+    cursor: pointer;
+    width:100%;
+    background: #50a7c2;
+}
+.form-control:hover{
+    border: 1px solid #50a7c2;
 }
