@@ -17,8 +17,27 @@ form[name="loginForm"] {
     padding: 60px 15px;
 }
 
+button.menu-toggle{
+    width: auto;
+}
+
 header {
     background: linear-gradient(to right,var(--main-color), var(--second-color));
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
 }
 
 footer {
@@ -52,17 +71,49 @@ button[disabled] {
     width: auto;
 }
 
-collapse.menu {
+.collapse.menu {
     background: var(--second-color);
     color: #fff;
+    display: block;
+    height: 100vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: fixed;
+    z-index: 3;
+    width: 300px;
+    right: -300px;
+    top: 0;
 }
 
-.dropdown {
+collapse.menu.collapsing {
+    transition: 0.3s ease;
+}
+
+.list-group-item {
+    background: transparent;
+    border: none;
+}
+
+.list-group-item:hover:not(.user-info) {
+    background: var(--main-color);
+    cursor: pointer;
+    color: #222;
+    border: none;
+}
+
+.list-group-item:not(:last-child){
+    border-bottom: 0.5px solid #fff;
+}
+
+.fas {
     width: auto;
 }
 
-.dropdown-menu {
-    width: auto;
+.collapse.menu.show {
+    right: 0;
+}
+
+.menu-header {
+    height: 50px;
 }
 
 .logo-small {
@@ -88,4 +139,8 @@ collapse.menu {
 
 .btn.btn-secondary {
     background: transparent;
+}
+
+.btn-secondary.focus, .btn-secondary:focus {
+    box-shadow: none;
 }
