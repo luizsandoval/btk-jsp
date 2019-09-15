@@ -2,7 +2,7 @@
 <html>
     <head>
         <%@include file="../../src/core/meta.jsp" %>
-        <title>BTK - Sistema Bibliotecário | Login</title>
+        <title>BTK - Login</title>
         <%@include file="../../src/core/head.jsp" %>
     </head>
     <body>

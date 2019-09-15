@@ -3,6 +3,7 @@
     --second-color: #50a7c2;
     --footer-height: 50px;
     --header-height: 90px;
+    --elevation-effect: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 
 *, html {
@@ -23,7 +24,7 @@ button.menu-toggle{
 
 header {
     background: linear-gradient(to right,var(--main-color), var(--second-color));
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: var(--elevation-effect);
 }
 
 #overlay {
@@ -71,21 +72,22 @@ button[disabled] {
     width: auto;
 }
 
-.collapse.menu {
+.menu {
     background: var(--second-color);
+    box-shadow: var(--elevation-effect);
     color: #fff;
     display: block;
-    height: 100vh;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: fixed;
-    z-index: 3;
+    height: 100vh;
     width: 300px;
-    right: -300px;
     top: 0;
+    right: -300px;
+    z-index: 3;
+    transition: right 0.3s ease;
 }
 
-collapse.menu.collapsing {
-    transition: 0.3s ease;
+.menu-header {
+    height: 50px;
 }
 
 .list-group-item {
@@ -108,13 +110,6 @@ collapse.menu.collapsing {
     width: auto;
 }
 
-.collapse.menu.show {
-    right: 0;
-}
-
-.menu-header {
-    height: 50px;
-}
 
 .logo-small {
     width: 80px;
@@ -148,6 +143,7 @@ collapse.menu.collapsing {
 .btn-link {
     color: var(--second-color);
 }
+
 .btn-block{
     display: block;
     width: 90%;
@@ -162,4 +158,14 @@ collapse.menu.collapsing {
 }
 .form-control:hover{
     border: 1px solid #50a7c2;
+}
+
+a.unstyled-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.unstyled-link:hover {
+    color: inherit;
+    text-decoration: none;
 }

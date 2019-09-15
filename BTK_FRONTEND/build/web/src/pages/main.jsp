@@ -4,7 +4,7 @@
 <html>
     <head>
         <%@include file="../../src/core/meta.jsp" %>
-        <title>BTK - Sistema Bibliotecário | Main</title>
+        <title>BTK - Home</title>
         <%@include file="../../src/core/head.jsp" %>
     </head>
     <body>

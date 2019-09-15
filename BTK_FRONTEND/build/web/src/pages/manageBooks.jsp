@@ -1,10 +1,8 @@
-
-
 <!DOCTYPE html>
 <html>
     <head>
         <%@include file="../../src/core/meta.jsp" %>
-        <title>BTK - Home</title>
+        <title>BTK - Gerenciar Livros </title>
         <%@include file="../../src/core/head.jsp" %>
     </head>
     <body>

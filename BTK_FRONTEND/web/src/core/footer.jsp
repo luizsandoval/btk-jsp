@@ -9,14 +9,14 @@
         let overlay = document.getElementById('overlay');
         let menu = document.getElementById('menu');
 
-        overlay.addEventListener('click', () => turnOverlayOFF());
+        overlay.addEventListener('click', () => closeMenu());
 
-        function turnOverlayON() {
+        function openMenu() {
             menu.style.right = '0px';
             overlay.style.display = 'block';
         }
 
-        function turnOverlayOFF() {
+        function closeMenu() {
             menu.style.right = '-300px';
             overlay.style.display = 'none';
         }
