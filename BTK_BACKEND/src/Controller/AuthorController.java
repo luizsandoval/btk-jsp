@@ -1,7 +1,7 @@
 package Controller;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 import DAO.AuthorDAO;
 import Model.AuthorBean;
@@ -26,7 +26,7 @@ public class AuthorController {
         return this.authorDAO.delete(author);
     }
 
-    public List<AuthorBean> buscarTodosOsAutores() throws SQLException, ClassNotFoundException {
+    public ArrayList<AuthorBean> buscarTodosOsAutores() throws SQLException, ClassNotFoundException {
         return this.authorDAO.listAll();
     }
 

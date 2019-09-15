@@ -1,7 +1,7 @@
 package Controller;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 import DAO.UserDAO;
 import Model.UserBean;
@@ -34,7 +34,7 @@ public class UserController {
         return this.userDAO.delete(user);
     }
 
-    public List<UserBean> buscarUsuarios() throws SQLException, ClassNotFoundException {
+    public ArrayList<UserBean> buscarUsuarios() throws SQLException, ClassNotFoundException {
         return this.userDAO.listAll();
     }
 }

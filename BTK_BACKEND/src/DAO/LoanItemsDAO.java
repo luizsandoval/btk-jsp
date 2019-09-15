@@ -46,7 +46,7 @@ public class LoanItemsDAO {
     }
 
     public ArrayList<LoanItemsBean> listAllLoanItems() {
-        final String sql = "select * from loan_items";
+        final String sql = "SELECT * FROM loan_items";
         ArrayList<LoanItemsBean> loanItems = new ArrayList<LoanItemsBean>();
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
@@ -73,17 +73,20 @@ public class LoanItemsDAO {
         }
     }
 
-    public int getItemsTotal() {
-        final String sql = "SELECT COUNT(id)total FROM loan_items";
+    public int getItemsTotal(int loanId) {
+        final String sql = "SELECT COUNT(id_loan)total FROM loan_items WHERE id_loan = ?";
         int id = 0;
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
+            ps.setInt(1, loanId);
+            
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
                 id = rs.getInt("total");
             }
-
+            ps.close();
+            rs.close();
         } catch (SQLException e) {
             System.out.println(e);
         }
@@ -114,7 +117,7 @@ public class LoanItemsDAO {
 
     private int getBookQuantity(int bookId) {
         final String sql = "SELECT quantidade FROM book WHERE id = ?";
-        int qtd = 0;
+        int qty = 0;
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
             ps.setInt(1, bookId);
@@ -122,18 +125,20 @@ public class LoanItemsDAO {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                qtd = rs.getInt("quantidade");
+                qty = rs.getInt("quantidade");
             }
+            ps.close();
+            rs.close();
         } catch (SQLException e) {
             System.out.println(e);
         }
 
-        return qtd;
+        return qty;
     }
 
-    public ArrayList<BookBean> addItems(String title) {
+    public ArrayList<BookBean> listAddedItems(String title) {
         final String sql = "SELECT book.id, book.nome, author.nome, book.editora, gender.nome "
-                + "FROM book AS book INNER JOIN author AS author ON book._id_author = author.id "
+                + "FROM book AS book INNER JOIN author AS author ON book.id_author = author.id "
                 + "INNER JOIN gender AS gender ON book.id_gender = gender.id "
                 + "WHERE book.nome LIKE '%" + title + "%'" + " ORDER BY book.id";
 
@@ -144,7 +149,7 @@ public class LoanItemsDAO {
 
             if (rs != null) {
                 while (rs.next()) {
-                    BookBean cb = new BookBean(
+                    BookBean bb = new BookBean(
                             rs.getString("nome"),
                             rs.getString("editora"),
                             rs.getString("descricao"),
@@ -152,10 +157,12 @@ public class LoanItemsDAO {
                             rs.getString("gender"),
                             rs.getInt("quantidade"));
 
-                    cb.setId(rs.getInt("id"));
+                    bb.setId(rs.getInt("id"));
 
-                    adicionarItens.add(cb);
+                    adicionarItens.add(bb);
                 }
+                ps.close();
+                rs.close();
                 return adicionarItens;
             } else {
 
@@ -168,13 +175,13 @@ public class LoanItemsDAO {
 
     }
 
-    public ArrayList<BookBean> listAllBooks(String id_loan) {
+    public ArrayList<BookBean> listAllBooks(int id_loan) {
         final String sql = "SELECT book.id, book.nome, author.nome, book.editora, gender.descricao, items.quantidade "
-                + "FROM book AS book INNER JOIN author AS author ON book.id_autor = author.id "
+                + "FROM book AS book INNER JOIN author AS author ON book.id_author = author.id "
                 + "INNER JOIN gender AS gender ON book.id_gender = gender.id "
-                + "INNER JOIN loan_items AS items ON items.id = book.id "
+                + "INNER JOIN loan_items AS items ON items.id_book = book.id "
                 + "INNER JOIN loan AS loan ON items.id_loan = loan.id"
-                + "WHERE items.id_loan = " + id_loan + " ORDER BY id";
+                + "WHERE items.id_loan = " + String.valueOf(id_loan) + " ORDER BY id";
 
         ArrayList<BookBean> booksList = new ArrayList<>();
 
@@ -207,7 +214,5 @@ public class LoanItemsDAO {
             System.out.println(e);
             return null;
         }
-
     }
-
 }

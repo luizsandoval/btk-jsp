@@ -1,7 +1,7 @@
 package Controller;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 import DAO.LesseeDAO;
 import Model.LesseeBean;
@@ -26,7 +26,7 @@ public class LesseeController {
         return this.lesseeDAO.delete(lessee);
     }
 
-    public List<LesseeBean> buscarLocatarios() throws SQLException, ClassNotFoundException {
+    public ArrayList<LesseeBean> buscarLocatarios() throws SQLException, ClassNotFoundException {
         return this.lesseeDAO.listAll();
     }
 

@@ -4,11 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.ArrayList;
 
-import Model.GenderBean;
 import Utils.Conexao;
+import Model.GenderBean;
 
 public class GenderDAO {
 
@@ -73,10 +72,10 @@ public class GenderDAO {
         }
     }
 
-    public List<GenderBean> listAll() {
+    public ArrayList<GenderBean> listAll() {
         final String sql = "select * from gender order by -gender.id";
 
-        List<GenderBean> genders = new ArrayList<GenderBean>();
+        ArrayList<GenderBean> genders = new ArrayList<GenderBean>();
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
 

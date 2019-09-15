@@ -1,7 +1,7 @@
 package Controller;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 import DAO.BookDAO;
 import Model.BookBean;
@@ -26,7 +26,7 @@ public class BookController {
         return this.bookDAO.delete(book);
     }
 
-    public List<BookBean> buscarLivros() throws SQLException, ClassNotFoundException {
+    public ArrayList<BookBean> buscarLivros() throws SQLException, ClassNotFoundException {
         return this.bookDAO.listAll();
     }
 }

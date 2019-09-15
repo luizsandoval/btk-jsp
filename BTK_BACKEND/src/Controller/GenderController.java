@@ -1,7 +1,7 @@
 package Controller;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 import DAO.GenderDAO;
 import Model.GenderBean;
@@ -26,7 +26,7 @@ public class GenderController {
         return this.genderDAO.delete(gender);
     }
 
-    public List<GenderBean> buscarGeneros() throws SQLException, ClassNotFoundException {
+    public ArrayList<GenderBean> buscarGeneros() throws SQLException, ClassNotFoundException {
         return this.genderDAO.listAll();
     }
 }
