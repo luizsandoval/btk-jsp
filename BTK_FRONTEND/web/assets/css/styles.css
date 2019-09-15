@@ -1,7 +1,61 @@
+:root {
+    --main-color: #b7f8db;
+    --second-color: #50a7c2;
+    --footer-height: 50px;
+}
+
 *, html {
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
-    height: 100%;
+    transition: 0.3s;
     width: 100%;
+}
+
+.row {
+    margin-left: 0px;
+}
+
+.container {
+    height: calc(100vh - var(--footer-height));
+}
+
+.logo-medium {
+    width: 100px;
+    height: auto;
+}
+
+form[name="loginForm"] {
+    width: 500px; 
+    padding: 60px 15px;
+}
+
+footer {
+    display: flex;
+    color: #fff;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to left, var(--main-color), var(--second-color));
+}
+
+button[disabled] {
+    background: lightgray;
+}
+
+.btn {
+    border-radius: 25px;
+    border: none;
+    padding: 0.5em;
+    color: #fff;
+}
+
+.btn.btn-primary {
+    background: linear-gradient(to right, var(--main-color), var(--second-color));    
+}
+
+.btn.btn-secondary {
+    background: transparent;
 }
 

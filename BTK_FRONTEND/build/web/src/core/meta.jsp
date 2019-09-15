@@ -3,5 +3,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="icon" href="./assets/img/logo.png" type="image/x-icon">
+<link rel="icon" href="../../assets/img/logo.png" type="image/x-icon">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">

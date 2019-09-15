@@ -1,9 +1,4 @@
-
-<%@page import="java.util.Date"%>
 <footer>
-    Copyright; &copy;
-    Luiz Sandoval, Matheus Fiaschi
-    <%  
-      new Date().getYear();
-    %>
+    <small> Copyright &copy;
+    Luiz Sandoval, Matheus Fiaschi - 2019. Todos os direitos reservados.</small>
 </footer>
