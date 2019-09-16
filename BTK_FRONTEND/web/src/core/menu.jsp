@@ -8,6 +8,12 @@
             <span>Nome do Usuário</span>
         </li>
         <li class="list-group-item">
+            <a class="d-flex justify-content-between align-items-center unstyled-link" href="main.jsp">    
+                <span>Home</span>
+                <span class="fas fa-home"></span>
+            </a>
+        </li>
+        <li class="list-group-item">
             <a class="d-flex justify-content-between align-items-center unstyled-link" href="manageBooks.jsp">    
                 <span>Gerenciar Livros</span>
                 <span class="fas fa-book"></span>

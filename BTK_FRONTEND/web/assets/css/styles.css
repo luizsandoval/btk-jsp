@@ -6,7 +6,7 @@
     --elevation-effect: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 
-*, html {
+html {
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
     transition: 0.3s;
@@ -60,7 +60,7 @@ button[disabled] {
     margin-left: 0px;
 }
 
-.container {
+div[class*="container"]{
     height: calc(100vh - var(--footer-height) - var(--header-height));
 }
 
