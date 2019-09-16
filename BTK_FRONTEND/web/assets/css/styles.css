@@ -18,10 +18,6 @@ form[name="loginForm"] {
     padding: 60px 15px;
 }
 
-button.menu-toggle{
-    width: auto;
-}
-
 header {
     background: linear-gradient(to right,var(--main-color), var(--second-color));
     box-shadow: var(--elevation-effect);
@@ -56,20 +52,12 @@ button[disabled] {
     background: lightgray;
 }
 
-.row {
-    margin-left: 0px;
-}
-
 div[class*="container"]{
     height: calc(100vh - var(--footer-height) - var(--header-height));
 }
 
 .container.login-page {
     height: calc(100vh - var(--footer-height));
-}
-
-.navbar-brand {
-    width: auto;
 }
 
 .menu {
@@ -105,11 +93,6 @@ div[class*="container"]{
 .list-group-item:not(:last-child){
     border-bottom: 0.5px solid #fff;
 }
-
-.fas {
-    width: auto;
-}
-
 
 .logo-small {
     width: 80px;
@@ -168,4 +151,30 @@ a.unstyled-link {
 a.unstyled-link:hover {
     color: inherit;
     text-decoration: none;
+}
+
+.top-gutter {
+    margin-top: 30px;
+}
+
+.modal-body {
+    padding: 15px 30px;
+}
+
+.modal-header{
+    border-bottom: 4px solid var(--second-color);
+    margin: 0 30px;
+}
+
+.modal-title {
+    margin-left: -19px;
+}
+
+.modal-subtitle {
+    margin-right: -19px;
+}
+
+.modal-footer {
+    border: none;
+    margin: 15px 15px 0 15px;
 }

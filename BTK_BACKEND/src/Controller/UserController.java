@@ -18,7 +18,7 @@ public class UserController {
         return this.userDAO.getUserByEmail(user.getEmail());
     }
 
-    public boolean fazerLogin(UserBean user) throws SQLException, ClassNotFoundException {
+    public UserBean fazerLogin(UserBean user) throws SQLException, ClassNotFoundException {
         return this.userDAO.authenticate(user.getEmail(), user.getSenha());
     }
 

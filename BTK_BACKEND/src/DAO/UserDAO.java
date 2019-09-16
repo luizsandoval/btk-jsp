@@ -101,27 +101,27 @@ public class UserDAO {
         }
     }
 
-    public boolean authenticate(String email, String pwd) {
-        final String sql = "select * from user where email = ?";
+    public UserBean authenticate(String email, String pwd) {
+        final String sql = "select * from user where email = ? AND senha = ?";
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
             ps.setString(1, email);
+            ps.setString(2, pwd);
 
             ResultSet rs = ps.executeQuery();
             rs.first();
 
-            if (rs.getString("password").equals(pwd)) {
-                ps.close();
-                rs.close();
-                return true;
-            } else {
-                ps.close();
-                rs.close();
-                return false;
+            if (rs.next()) {
+                System.out.println("achei vc");
+                UserBean ub = new UserBean(rs.getString("nome"), rs.getString("email"));
+                ub.setId(rs.getInt("id"));
+                System.out.print(ub);
+                return ub;
             }
+            return null;
         } catch (SQLException e) {
             System.out.println(e);
-            return false;
+            return null;
         }
     }
 

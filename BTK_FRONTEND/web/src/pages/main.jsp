@@ -1,4 +1,9 @@
-
+<% 
+    if (session.getAttribute("userId") == null) {
+        response.sendRedirect("./login.jsp");
+    }
+    
+%>
 
 <!DOCTYPE html>
 <html>

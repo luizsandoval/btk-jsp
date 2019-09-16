@@ -1,17 +1,25 @@
-<%-- 
-    Document   : validarLogin
-    Created on : Sep 15, 2019, 2:20:56 PM
-    Author     : luiz.sandoval
---%>
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="Controller.UserController"%>
+<%@page import="Model.UserBean"%>
+<%
+    final String email = request.getParameter("EMAIL");
+    final String senha = request.getParameter("SENHA");
+    UserBean ub = new UserBean(email, senha);
+    final UserController uc = new UserController();
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+    ub = uc.fazerLogin(ub);
+    
+    System.out.print(ub.getNome());
+    if (ub != null) {
+        System.out.print("objeto: " + ub.toString());
+        System.out.print("entrei");
+        session.setAttribute("userId", ub.getId());
+        session.setAttribute("username", ub.getNome());
+        session.setAttribute("userEmail", ub.getEmail());
+        
+        response.sendRedirect("../pages/main.jsp");
+    } else {
+        JOptionPane.showMessageDialog(null, "Usuário ou Senha Inválido(s)!");
+        response.sendRedirect("../pages/login.jsp");
+    }
+%>

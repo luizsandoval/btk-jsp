@@ -1,3 +1,5 @@
+<%@page import="Model.UserBean"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,7 +9,7 @@
     </head>
     <body>
         <div class="container login-page d-flex justify-content-center align-items-center flex-direction-column">
-            <form action="" method="post" name="loginForm">
+            <form action="../methods/validarLogin.jsp" method="post" name="loginForm">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                         <img src="../../assets/img/logo.png" class="logo-medium"/>
@@ -25,13 +27,13 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                        
                         <div class="form-group">
                             <label for="SENHA">Senha*</label>
-                            <input name="SENHA" class="form-control" placeholder="Digite sua senha ultra secreta..." type="password" required/>
+                            <input name="SENHA" class="form-control" placeholder="Digite sua senha ultra secreta..." type="password" autocomplete="off" required/>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                        
-                        <button disabled type="submit" class="btn btn-block btn-primary btn-entrar">Entrar no BTK</button>
+                        <button type="submit" class="btn btn-block btn-primary btn-entrar mt-2">Entrar no BTK</button>
                     </div>
                 </div>
                 <div class="row mt-3">

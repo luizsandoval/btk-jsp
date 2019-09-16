@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="container login-page d-flex justify-content-center align-items-center flex-direction-column">
-            <form action="" method="post" name="loginForm">
+            <form action="../methods/inserirUsuario.jsp" method="post" name="loginForm">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                         <img src="../../assets/img/logo.png" class="logo-medium"/>
@@ -33,14 +33,14 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                        
                         <div class="form-group">
                             <label for="SENHA">Senha*</label>
-                            <input name="SENHA" class="form-control" placeholder="Digite sua senha" type="password" required/>
+                            <input name="SENHA" class="form-control" placeholder="Digite uma senha" type="password" autocomplete="off" required/>
                             <small class="form-text text-muted">Não se preocupe, sua senha é ultra secreta.</small>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                        
-                        <button disabled type="submit" class="btn btn-block btn-primary btn-entrar">Cadastrar-se agora</button>
+                        <button type="submit" class="btn btn-block btn-primary btn-entrar">Cadastrar-se agora</button>
                     </div>
                 </div>
                  <div class="row mt-3">
