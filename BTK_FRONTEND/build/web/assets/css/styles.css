@@ -73,3 +73,26 @@ button[disabled] {
 .form-control:hover{
     border: 1px solid #50a7c2;
 }
+.container-obra{
+    height: 20%;
+    width: 100%;
+    border: 1px solid;
+    margin-top: 0px;
+}
+.container-dadosEprestimo{
+    height: 65%;
+    width: 100%;
+    border: 1px solid;
+}
+.container-buttonsEmprestimo{
+    height: 15%;
+    width: 100%;
+    border: 1px solid;
+}
+.containerTelaEmprestimo{
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+}
