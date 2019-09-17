@@ -1,10 +1,5 @@
-<% 
-    if (session.getAttribute("userId") == null) {
-        response.sendRedirect("./login.jsp");
-    }
-    
-%>
 
+<%@include file="../methods/verificarUsuarioLogado.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>

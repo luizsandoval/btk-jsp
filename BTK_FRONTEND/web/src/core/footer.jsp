@@ -21,5 +21,9 @@
             overlay.style.display = 'none';
         }
 
+        function logout() {
+            window.location.href = "http://localhost:8080/BTK_FRONTEND/src/pages/login.jsp?action=logout";
+        }
+
     </script>
 </footer>

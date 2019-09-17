@@ -1,5 +1,12 @@
 <%@page import="Model.UserBean"%>
 
+<% 
+    if(session.getAttribute("loggedUser") != null && request.getParameter("action") != null && request.getParameter("action").equals("logout")) {
+        session.removeAttribute("loggedUser");
+    } else if (session.getAttribute("loggedUser") != null){
+        response.sendRedirect("./main.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>

@@ -112,10 +112,8 @@ public class UserDAO {
             rs.first();
 
             if (rs.next()) {
-                System.out.println("achei vc");
-                UserBean ub = new UserBean(rs.getString("nome"), rs.getString("email"));
+                UserBean ub = new UserBean(rs.getString("email"), "", rs.getString("nome"));
                 ub.setId(rs.getInt("id"));
-                System.out.print(ub);
                 return ub;
             }
             return null;

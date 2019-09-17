@@ -1,4 +1,4 @@
-<%@page import="javax.swing.JOptionPane"%>
+<%--<%@page import="javax.swing.JOptionPane"%>--%>
 <%@page import="Controller.UserController"%>
 <%@page import="Model.UserBean"%>
 <%
@@ -9,17 +9,12 @@
 
     ub = uc.fazerLogin(ub);
     
-    System.out.print(ub.getNome());
     if (ub != null) {
-        System.out.print("objeto: " + ub.toString());
-        System.out.print("entrei");
-        session.setAttribute("userId", ub.getId());
-        session.setAttribute("username", ub.getNome());
-        session.setAttribute("userEmail", ub.getEmail());
+        session.setAttribute("loggedUser", ub);
         
         response.sendRedirect("../pages/main.jsp");
     } else {
-        JOptionPane.showMessageDialog(null, "Usuário ou Senha Inválido(s)!");
+//        JOptionPane.showMessageDialog(null, "Usuário ou Senha Inválido(s)!");
         response.sendRedirect("../pages/login.jsp");
     }
 %>

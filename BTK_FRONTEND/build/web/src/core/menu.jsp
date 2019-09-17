@@ -1,3 +1,5 @@
+<%@page import="Model.UserBean"%>
+
 <div class="menu" id="menu">
     <div class="menu-header d-flex align-items-center justify-content-end p-3">
         <button class="btn btn-secondary btn-sq menu-toggle" onclick="closeMenu();"><span class="mr-2">Fechar</span><span class="fas fa-times"></span></button>
@@ -5,7 +7,13 @@
     <ul class="list-group">
         <li class="list-group-item d-flex flex-direction-column justify-content-center flex-wrap align-items-center pt-4 pb-4 user-info text-center">
             <span class="fas fa-user-alt fa-3x mb-3" style="width: 100%;"></span>
-            <span><%  out.print(session.getAttribute("username")); %>
+            <span>
+                <%  
+                    if (session.getAttribute("loggedUser") != null) {
+                        final UserBean user = (UserBean) session.getAttribute("loggedUser");
+                        out.print(user.getNome());
+                    }
+                %>
             </span>
         </li>
         <li class="list-group-item">
@@ -38,10 +46,11 @@
                 <span class="fas fa-arrow-circle-up"></span>
             </a>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            <span>Sair do BTK</span>
-            <span class="fas fa-sign-out-alt"></span>
+        <li class="list-group-item">
+            <a class="d-flex justify-content-between align-items-center unstyled-link" onclick="logout();">
+                <span>Sair do BTK</span>
+                <span class="fas fa-sign-out-alt"></span>
+            </a>
         </li>
     </ul>
 </div>
-            
