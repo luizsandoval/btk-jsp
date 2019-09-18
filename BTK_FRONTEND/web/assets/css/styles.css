@@ -19,6 +19,8 @@ form[name="loginForm"] {
 }
 
 header {
+    width: 100%;
+    z-index: 2;
     background: linear-gradient(to right,var(--main-color), var(--second-color));
     box-shadow: var(--elevation-effect);
 }
@@ -44,6 +46,7 @@ footer {
     height: 50px;
     text-align: center;
     justify-content: center;
+    margin-top: 5px;
     align-items: center;
     background: linear-gradient(to left, var(--main-color), var(--second-color));
 }
@@ -157,24 +160,20 @@ a.unstyled-link:hover {
     margin-top: 30px;
 }
 
-.modal-body {
-    padding: 15px 30px;
-}
-
-.modal-header{
+.form-header{
     border-bottom: 4px solid var(--second-color);
-    margin: 0 30px;
+    margin-bottom: 30px;
 }
 
-.modal-title {
-    margin-left: -19px;
+*:invalid{
+    border-color: red;
 }
 
-.modal-subtitle {
-    margin-right: -19px;
+form {
+    box-shadow: var(--elevation-effect);
+    padding: 30px;
 }
 
-.modal-footer {
-    border: none;
-    margin: 15px 15px 0 15px;
+select {
+    cursor: pointer;
 }

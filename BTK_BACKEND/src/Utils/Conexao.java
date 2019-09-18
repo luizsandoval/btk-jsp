@@ -8,10 +8,10 @@ public class Conexao {
 
     public Connection getConnection() throws SQLException, ClassNotFoundException {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             String url = "";
             url += "jdbc:mysql://localhost:3306/btk?";
-            url += "user=lsandoval&password=caneta123&useSSL=false";
+            url += "user=root&password=cachorrocomdengue&useSSL=false";
             
             return DriverManager.getConnection(url);
         } catch (SQLException e) {

@@ -18,7 +18,7 @@ public class BookDAO {
     }
 
     public boolean create(BookBean book) {
-        final String sql = "insert into book(nome, editora, descricao, quantidade, id_AUTOR, id_GENERO) values (?,?,?,?,?,?)";
+        final String sql = "INSERT INTO book(nome, editora, descricao, quantidade, id_author, id_gender) VALUES (?,?,?,?,?,?)";
 
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
@@ -42,7 +42,7 @@ public class BookDAO {
     }
 
     public boolean edit(BookBean book) {
-        final String sql = "update book set nome = ?, editora = ?, descricao = ?, quantidade = ?, id_AUTOR = ?, id_GENERO = ? where id = ?";
+        final String sql = "UPDATE book SET nome = ?, editora = ?, descricao = ?, quantidade = ?, id_author = ?, id_gender = ? WHERE id = ?";
 
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
@@ -67,7 +67,7 @@ public class BookDAO {
     }
 
     public boolean delete(BookBean book) {
-        final String sql = "delete from book where id = ?";
+        final String sql = "DELETE FROM book WHERE id = ?";
 
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
@@ -85,10 +85,43 @@ public class BookDAO {
 
     }
 
+    public BookBean getBookById(int id) {
+        final String sql = "SELECT b.id, b.nome, b.editora, b.descricao, b.quantidade, g.nome AS genero, a.nome AS autor "
+                + " FROM book AS b INNER JOIN author AS a ON b.id_author = a.id "
+                + " INNER JOIN gender AS g ON b.id_gender = g.id WHERE b.id = ?";
+        try {
+            PreparedStatement ps = this.CON.prepareStatement(sql);
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                BookBean bb = new BookBean(
+                        rs.getString("nome"),
+                        rs.getString("editora"),
+                        rs.getString("descricao"),
+                        rs.getString("autor"),
+                        rs.getString("genero"),
+                        rs.getInt("quantidade")
+                );
+                bb.setId(rs.getInt("id"));
+                ps.close();
+                rs.close();
+                return bb;
+            }
+            ps.close();
+            rs.close();
+            return null;
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+    }
+
     public ArrayList<BookBean> listAll() {
-        final String sql = "select book.id, book.nome, book.editora, book.descricao, book.quantidade, genero.nome, autor.nome "
-                + " from book as b inner join author as a on b.id_autor = a.id "
-                + " inner join gender as g on book.id_genero = g.id order by -book.id";
+        final String sql = "SELECT b.id, b.nome, b.editora, b.descricao, b.quantidade, g.nome AS genero, a.nome AS autor "
+                + " FROM book AS b INNER JOIN author AS a ON b.id_author = a.id "
+                + " INNER JOIN gender AS g ON b.id_gender = g.id ORDER BY -b.id";
 
         ArrayList<BookBean> books = new ArrayList<>();
         try {
@@ -123,13 +156,14 @@ public class BookDAO {
     }
 
     private int getAuthorId(String autor) {
-        final String sql = "select * from author where nome = ?";
+        final String sql = "SELECT id FROM author WHERE nome = ?";
         int autorID = 0;
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
             ps.setString(1, autor);
 
             ResultSet rs = ps.executeQuery();
+            rs.first();
 
             autorID = rs.getInt("id");
 
@@ -141,7 +175,7 @@ public class BookDAO {
 
     private int getGenderId(String genero) {
         int generoID = 0;
-        final String sql = "select * from gender where nome = ?";
+        final String sql = "SELECT id FROM gender WHERE nome = ?";
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
             ps.setString(1, genero);

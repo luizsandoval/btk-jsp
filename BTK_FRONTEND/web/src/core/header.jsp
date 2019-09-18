@@ -9,4 +9,5 @@
     </nav>
     <%@include file="./menu.jsp" %>
 </header>
+<div class="navbar-gutter"></div>
 <div id="overlay"></div>

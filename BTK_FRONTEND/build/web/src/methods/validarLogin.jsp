@@ -14,7 +14,6 @@
         
         response.sendRedirect("../pages/main.jsp");
     } else {
-//        JOptionPane.showMessageDialog(null, "Usuário ou Senha Inválido(s)!");
         response.sendRedirect("../pages/login.jsp");
     }
 %>

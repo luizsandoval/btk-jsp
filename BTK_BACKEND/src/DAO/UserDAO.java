@@ -102,16 +102,15 @@ public class UserDAO {
     }
 
     public UserBean authenticate(String email, String pwd) {
-        final String sql = "select * from user where email = ? AND senha = ?";
+        final String sql = "SELECT * FROM user WHERE email = ? AND senha = ?";
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
             ps.setString(1, email);
             ps.setString(2, pwd);
 
             ResultSet rs = ps.executeQuery();
-            rs.first();
 
-            if (rs.next()) {
+            while (rs.next()) {
                 UserBean ub = new UserBean(rs.getString("email"), "", rs.getString("nome"));
                 ub.setId(rs.getInt("id"));
                 return ub;

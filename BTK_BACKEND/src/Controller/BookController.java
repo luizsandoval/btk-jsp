@@ -26,6 +26,10 @@ public class BookController {
         return this.bookDAO.delete(book);
     }
 
+    public BookBean buscarLivroPorID(BookBean book) throws SQLException, ClassNotFoundException {
+        return this.bookDAO.getBookById(book.getId());
+    }
+
     public ArrayList<BookBean> buscarLivros() throws SQLException, ClassNotFoundException {
         return this.bookDAO.listAll();
     }
