@@ -18,9 +18,14 @@ form[name="loginForm"] {
     padding: 60px 15px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 header {
     width: 100%;
-    z-index: 2;
     background: linear-gradient(to right,var(--main-color), var(--second-color));
     box-shadow: var(--elevation-effect);
 }
@@ -43,7 +48,9 @@ footer {
     display: flex;
     color: #fff;
     width: 100%;
-    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+    flex: 1;
     text-align: center;
     justify-content: center;
     margin-top: 5px;
@@ -56,11 +63,7 @@ button[disabled] {
 }
 
 div[class*="container"]{
-    height: calc(100vh - var(--footer-height) - var(--header-height));
-}
-
-.container.login-page {
-    height: calc(100vh - var(--footer-height));
+    flex: 1;
 }
 
 .menu {
@@ -172,6 +175,10 @@ a.unstyled-link:hover {
 form {
     box-shadow: var(--elevation-effect);
     padding: 30px;
+}
+
+form[name="loginForm"] {
+    box-shadow: none;
 }
 
 select {
