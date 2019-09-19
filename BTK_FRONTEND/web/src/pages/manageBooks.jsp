@@ -55,7 +55,7 @@
                                     <td><%=book.getQuantidade()%></td>
                                     <td>
                                         <a class="btn btn-primary btn-sm btn-block" href="keepBook.jsp?ID=<%= book.getId() %>"><span class="fas fa-pencil-alt"></span></a> 
-                                        <a class="btn btn-danger btn-sm btn-block" href="../methods/manterLivro.jsp?ID=<%= book.getId() %>?ACTION=DELETE"><span class="fas fa-trash-alt"></span></a> 
+                                        <a class="btn btn-danger btn-sm btn-block" href="../methods/manterLivro.jsp?ID=<%= book.getId() %>&ACTION=DELETE"><span class="fas fa-trash-alt"></span></a> 
                                     </td>
                                 </tr>
                                 <% } %>
