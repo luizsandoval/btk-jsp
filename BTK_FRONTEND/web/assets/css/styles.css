@@ -2,31 +2,44 @@
     --main-color: #b7f8db;
     --second-color: #50a7c2;
     --footer-height: 50px;
+    --header-height: 90px;
+    --elevation-effect: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 
-*, html {
+html {
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
     transition: 0.3s;
     width: 100%;
 }
 
-.row {
-    margin-left: 0px;
-}
-
-.container {
-    height: calc(100vh - var(--footer-height));
-}
-
-.logo-medium {
-    width: 100px;
-    height: auto;
-}
-
 form[name="loginForm"] {
     width: 500px; 
     padding: 60px 15px;
+}
+
+button.menu-toggle{
+    width: auto;
+}
+
+header {
+    background: linear-gradient(to right,var(--main-color), var(--second-color));
+    box-shadow: var(--elevation-effect);
+    width: 100%;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
 }
 
 footer {
@@ -44,6 +57,71 @@ button[disabled] {
     background: lightgray;
 }
 
+.row {
+    margin-left: 0px;
+}
+
+div[class*="container"]{
+    height: calc(100vh - var(--footer-height) - var(--header-height));
+}
+
+.container.login-page {
+    height: calc(100vh - var(--footer-height));
+}
+
+.navbar-brand {
+    width: auto;
+}
+
+.menu {
+    background: var(--second-color);
+    box-shadow: var(--elevation-effect);
+    color: #fff;
+    display: block;
+    position: fixed;
+    height: 100vh;
+    width: 300px;
+    top: 0;
+    right: -300px;
+    z-index: 3;
+    transition: right 0.3s ease;
+}
+
+.menu-header {
+    height: 50px;
+}
+
+.list-group-item {
+    background: transparent;
+    border: none;
+}
+
+.list-group-item:hover:not(.user-info) {
+    background: var(--main-color);
+    cursor: pointer;
+    color: #222;
+    border: none;
+}
+
+.list-group-item:not(:last-child){
+    border-bottom: 0.5px solid #fff;
+}
+
+.fas {
+    width: auto;
+}
+
+
+.logo-small {
+    width: 80px;
+    height: auto;
+}
+
+.logo-medium {
+    width: 100px;
+    height: auto;
+}
+
 .btn {
     border-radius: 25px;
     border: none;
@@ -59,6 +137,14 @@ button[disabled] {
     background: transparent;
 }
 
+.btn-secondary.focus, .btn-secondary:focus {
+    box-shadow: none;
+}
+
+.btn-link {
+    color: var(--second-color);
+}
+
 .btn-block{
     display: block;
     width: 90%;
@@ -67,32 +153,142 @@ button[disabled] {
     transition: 0.3s;
 }
 .btn-entrar:hover{
+    cursor: pointer;
     width:100%;
     background: #50a7c2;
 }
 .form-control:hover{
     border: 1px solid #50a7c2;
 }
+
+a.unstyled-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.unstyled-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
 .container-obra{
-    height: 20%;
+    height: 25%!important;
     width: 100%;
-    border: 1px solid;
+    /*border: 1px solid;*/
     margin-top: 0px;
 }
 .container-dadosEprestimo{
-    height: 65%;
+    height: 44%!important;
     width: 100%;
-    border: 1px solid;
+    /*border: 1px solid;*/
 }
 .container-buttonsEmprestimo{
-    height: 15%;
+    height: 10%!important;
     width: 100%;
-    border: 1px solid;
+    /*border: 1px solid;*/
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    border-radius: 0px!important;
 }
 .containerTelaEmprestimo{
     flex-direction: column;
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100%!important;
+}
+.text-empretimo{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-top: 13px;
+    margin-left: 12px;
+    margin-bottom: 0;
+}
+.input-empretimo{
+    display: block;
+    width: 90%;
+    height: 30px!important;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;   
+    margin-left: 10px;
+}
+.input-qtd{
+    display: block;
+    width: 89px!important;
+    height: 30px!important;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-left: 10px;
+}
+.input-dateEmprestimo{
+    -webkit-appearance: listbox;
+    display: block;
+    width: 180px;
+    height: 30px!important;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-left: auto;
+    margin-right: 25px;
+}
+.table-emprestimo{
+    display: block;
+    width: 70%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+}
+.container-btn-emprestimo{
+    width: 200px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: 25px;
+    margin-top: -125px;
+    height: auto!important;
+    padding-bottom: 20px;
+}
+.btn-emprestimo{
+    height: 100%;
+    margin:0!important;
+    width: 50%;
+    border-radius: 0px!important;
     
+}
+.txt-obra{
+    width: 100%;
+    background: #cccccc;
+    margin: 0;
+    padding: 5px;
+}
+.text-descricao{
+    height: 100px!important;
+}
+.genero-nome{
+    margin-bottom: 15px;
+}
+.div-1{
+    display: -webkit-box;
 }
