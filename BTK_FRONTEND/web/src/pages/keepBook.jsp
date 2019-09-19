@@ -1,9 +1,18 @@
 
-<%@page import="Controller.BookController"%>
+<%@page import="java.util.List"%>
+
+<%@page import="Model.AuthorBean"%>
+<%@page import="Model.GenderBean"%>
 <%@page import="Model.BookBean"%>
+<%@page import="Controller.AuthorController"%>
+<%@page import="Controller.GenderController"%>
+<%@page import="Controller.BookController"%>
+
 <% 
     BookBean bb = new BookBean("", "", "","", "", 0);
     final BookController bc = new BookController();
+    final List<GenderBean> genders = new GenderController().buscarGeneros();
+    final List<AuthorBean> authors = new AuthorController().buscarTodosOsAutores();
     
     if(request.getParameter("ID") != null) {
         bb.setId(Integer.parseInt(request.getParameter("ID")));
@@ -45,10 +54,10 @@
                         <div class="form-group">
                             <label for="GENERO">Gênero*</label>
                             <select name="GENERO" class="form-control" required>
-                                <option value="">Selecione um gênero...</option>
-                                <option value="Aventura">Aventura</option>
-                                <option value="Infanto Juvenil">Infanto Juvenil</option>
-                                <option value="Romance">Romance</option>
+                                <option value="" <%= bb.getGenero().equals("") ? "selected" : ""%>>Selecione um Gênero...</option>
+                                <% for (GenderBean gender : genders ) {%>
+                                    <option value="<%= gender.getNome() %>" <%= gender.getNome().equals(bb.getGenero()) ? "selected" : ""%>><%= gender.getNome()%></option>
+                                <% } %>
                             </select>
                         </div>
                     </div>
@@ -56,10 +65,10 @@
                         <div class="form-group">
                             <label for="AUTOR">Autor*</label>
                             <select name="AUTOR" class="form-control" required>
-                                <option value="">Selecione um autor...</option>
-                                <option value="JK Rownling">JK Rownling</option>
-                                <option value="Rick Riordan">Rick Riordan</option>
-                                <option value="Suzanne Collins">Suzanne Collins</option>
+                                <option value="" <%= bb.getAutor().equals("") ? "selected" : ""%>>Selecione um Autor...</option>
+                                 <% for (AuthorBean author : authors ) {%>
+                                    <option value="<%= author.getNome() %>" <%= author.getNome().equals(bb.getAutor()) ? "selected" : ""%>><%= author.getNome()%></option>
+                                <% } %>
                             </select>
                         </div>
                     </div>

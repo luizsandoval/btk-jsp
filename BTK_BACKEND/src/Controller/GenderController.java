@@ -26,6 +26,10 @@ public class GenderController {
         return this.genderDAO.delete(gender);
     }
 
+    public GenderBean buscarGeneroPorID(GenderBean gender) throws SQLException, ClassNotFoundException {
+        return this.genderDAO.getGenderByID(gender.getId());
+    }
+
     public ArrayList<GenderBean> buscarGeneros() throws SQLException, ClassNotFoundException {
         return this.genderDAO.listAll();
     }

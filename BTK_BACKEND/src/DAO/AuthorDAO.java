@@ -38,7 +38,7 @@ public class AuthorDAO {
     }
 
     public boolean edit(AuthorBean author) {
-        final String sql = "update author set nome = ?, sexo = ?, nacionalidade = ?, idade = ? where id = ?";
+        final String sql = "update author set nome = ?, sexo = ?, nacionalidade = ?, idade = ?, where id = ?";
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
 
@@ -81,6 +81,35 @@ public class AuthorDAO {
 
             System.out.println(e);
             return false;
+        }
+    }
+    
+    public AuthorBean getAuthorByID(int id) {
+      final String sql = "SELECT * FROM author WHERE id = ?";
+        try {
+            PreparedStatement ps = this.CON.prepareStatement(sql);
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                AuthorBean ab = new AuthorBean(
+                        rs.getString("nome"),
+                        rs.getString("sexo"),
+                        rs.getString("nacionalidade"),
+                        rs.getString("idade")
+                );
+                ab.setId(rs.getInt("id"));
+                ps.close();
+                rs.close();
+                return ab;
+            }
+            ps.close();
+            rs.close();
+            return null;
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
         }
     }
 

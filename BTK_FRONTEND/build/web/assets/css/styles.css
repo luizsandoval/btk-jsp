@@ -28,6 +28,7 @@ header {
     width: 100%;
     background: linear-gradient(to right,var(--main-color), var(--second-color));
     box-shadow: var(--elevation-effect);
+    width: 100%;
 }
 
 #overlay {
@@ -163,6 +164,126 @@ a.unstyled-link:hover {
     margin-top: 30px;
 }
 
+.container-obra{
+    height: 25%!important;
+    width: 100%;
+    margin-top: 0px;
+}
+.container-dadosEprestimo{
+    height: 44%!important;
+    width: 100%;
+}
+.container-buttonsEmprestimo{
+    height: 10%!important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 0px!important;
+}
+.containerTelaEmprestimo{
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%!important;
+}
+.text-empretimo{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-top: 13px;
+    margin-left: 12px;
+    margin-bottom: 0;
+}
+.input-empretimo{
+    display: block;
+    width: 90%;
+    height: 30px!important;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;   
+    margin-left: 10px;
+}
+.input-qtd{
+    display: block;
+    width: 89px!important;
+    height: 30px!important;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-left: 10px;
+}
+.input-dateEmprestimo{
+    -webkit-appearance: listbox;
+    display: block;
+    width: 180px;
+    height: 30px!important;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-left: auto;
+    margin-right: 25px;
+}
+.table-emprestimo{
+    display: block;
+    width: 70%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+}
+.container-btn-emprestimo{
+    width: 200px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: 25px;
+    margin-top: -125px;
+    height: auto!important;
+    padding-bottom: 20px;
+}
+.btn-emprestimo{
+    height: 100%;
+    margin:0!important;
+    width: 50%;
+    border-radius: 0px!important;
+
+}
+.txt-obra{
+    width: 100%;
+    background: #cccccc;
+    margin: 0;
+    padding: 5px;
+}
+.text-descricao{
+    height: 100px!important;
+}
+.genero-nome{
+    margin-bottom: 15px;
+}
+
+.div-1{
+    display: -webkit-box;
+}
+
 .form-header{
     border-bottom: 4px solid var(--second-color);
     margin-bottom: 30px;
@@ -183,4 +304,13 @@ form[name="loginForm"] {
 
 select {
     cursor: pointer;
+}
+
+.table-responsive {
+    box-shadow: var(--elevation-effect);
+    padding: 30px;
+}
+
+.table th {
+    border-top: none;
 }

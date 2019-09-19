@@ -1,5 +1,5 @@
 <%@page import="Model.UserBean"%>
-
+<%@include file="../methods/verificarUsuarioLogado.jsp" %>
 <div class="menu" id="menu">
     <div class="menu-header d-flex align-items-center justify-content-end p-3">
         <button class="btn btn-secondary btn-sq menu-toggle" onclick="closeMenu();"><span class="mr-2">Fechar</span><span class="fas fa-times"></span></button>
@@ -29,19 +29,19 @@
             </a>
         </li>
         <li class="list-group-item">
-            <a class="d-flex justify-content-between align-items-center unstyled-link">
+            <a class="d-flex justify-content-between align-items-center unstyled-link" href="manageAuthors.jsp">
                 <span>Gerenciar Autores</span>
                 <span class="fas fa-users"></span>
             </a>
         </li>
         <li class="list-group-item">
-            <a class="d-flex justify-content-between align-items-center unstyled-link">
+            <a class="d-flex justify-content-between align-items-center unstyled-link" href="manageGenders.jsp">
                 <span>Gerenciar Gêneros</span>
                 <span class="fas fa-info"></span>
             </a>
         </li>
         <li class="list-group-item">
-            <a class="d-flex justify-content-between align-items-center unstyled-link">
+            <a class="d-flex justify-content-between align-items-center unstyled-link" href="manageLoans.jsp">
                 <span>Gerenciar Empréstimos</span>
                 <span class="fas fa-arrow-circle-up"></span>
             </a>

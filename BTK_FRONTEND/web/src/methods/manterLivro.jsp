@@ -1,5 +1,6 @@
 <%@page import="Controller.BookController"%>
 <%@page import="Model.BookBean"%>
+<%@include file="../methods/verificarUsuarioLogado.jsp" %>
 <%
     final int qtd = request.getParameter("QUANTIDADE") != null ? Integer.parseInt(request.getParameter("QUANTIDADE")) : 0;
     final BookBean bb = new BookBean(

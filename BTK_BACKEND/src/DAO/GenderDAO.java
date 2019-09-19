@@ -72,6 +72,33 @@ public class GenderDAO {
         }
     }
 
+    public GenderBean getGenderByID(int id) {
+        final String sql = "SELECT * FROM gender WHERE id = ?";
+        try {
+            PreparedStatement ps = this.CON.prepareStatement(sql);
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                GenderBean gb = new GenderBean(
+                        rs.getString("nome"),
+                        rs.getString("descricao")
+                );
+                gb.setId(rs.getInt("id"));
+                ps.close();
+                rs.close();
+                return gb;
+            }
+            ps.close();
+            rs.close();
+            return null;
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+    }
+
     public ArrayList<GenderBean> listAll() {
         final String sql = "select * from gender order by -gender.id";
 

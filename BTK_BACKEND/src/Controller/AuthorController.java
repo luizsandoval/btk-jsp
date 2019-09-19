@@ -26,6 +26,10 @@ public class AuthorController {
         return this.authorDAO.delete(author);
     }
 
+    public AuthorBean buscarAutorPorID(AuthorBean author) throws SQLException, ClassNotFoundException {
+        return this.authorDAO.getAuthorByID(author.getId());
+    }
+
     public ArrayList<AuthorBean> buscarTodosOsAutores() throws SQLException, ClassNotFoundException {
         return this.authorDAO.listAll();
     }

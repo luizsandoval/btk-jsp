@@ -1,0 +1,30 @@
+SMAP
+emprestimo_jsp.java
+JSP
+*S JSP
+*F
++ 0 emprestimo.jsp
+src/pages/emprestimo.jsp
++ 1 meta.jsp
+src/pages/../../src/core/meta.jsp
++ 2 head.jsp
+src/pages/../../src/core/head.jsp
++ 3 header.jsp
+src/pages/../../src/core/header.jsp
++ 4 menu.jsp
+src/pages/../../src/core/./menu.jsp
++ 5 footer.jsp
+src/pages/../../src/core/footer.jsp
+*L
+5,5:53
+1#1,7:58
+9#0,3:65
+1#2,8:68
+11#0,5:75
+1#3,10:80
+1#4,45:90
+10#3,4:135
+15#0,62:138
+1#5,26:200
+76#0,6:225
+*E
