@@ -9,7 +9,7 @@
 
     final AuthorController ac = new AuthorController();
 
-    if (!request.getParameter("ID").equals("")) {
+    if (request.getParameter("ID") != null) {
 
         ab.setId(Integer.parseInt(request.getParameter("ID")));
 

@@ -22,6 +22,12 @@
                 <span class="fas fa-home"></span>
             </a>
         </li>
+         <li class="list-group-item">
+            <a class="d-flex justify-content-between align-items-center unstyled-link" href="keepLoan.jsp">
+                <span>Realizar Empréstimo</span>
+                <span class="fas fa-arrow-circle-up"></span>
+            </a>
+        </li>
         <li class="list-group-item">
             <a class="d-flex justify-content-between align-items-center unstyled-link" href="manageBooks.jsp">    
                 <span>Gerenciar Livros</span>
@@ -38,12 +44,6 @@
             <a class="d-flex justify-content-between align-items-center unstyled-link" href="manageGenders.jsp">
                 <span>Gerenciar Gêneros</span>
                 <span class="fas fa-info"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a class="d-flex justify-content-between align-items-center unstyled-link" href="manageLoans.jsp">
-                <span>Gerenciar Empréstimos</span>
-                <span class="fas fa-arrow-circle-up"></span>
             </a>
         </li>
         <li class="list-group-item">

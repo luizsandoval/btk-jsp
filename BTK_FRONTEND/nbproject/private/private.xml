@@ -1,32 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/BTK_JSP/BTK_FRONTEND/web/src/pages/login.jsp</file>
-            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/BTK_JSP/BTK_FRONTEND/web/src/methods/manterLivro.jsp</file>
-            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/BTK_JSP/BTK_FRONTEND/web/src/core/meta.jsp</file>
-            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/BTK_JSP/BTK_FRONTEND/web/index.jsp</file>
-            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/BTK_JSP/BTK_FRONTEND/web/src/core/head.jsp</file>
-            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/BTK_JSP/BTK_FRONTEND/web/src/pages/keepBook.jsp</file>
-=======
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/src/core/head.jsp</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/src/pages/register.jsp</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/src/core/menu.jsp</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/src/pages/login.jsp</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/assets/css/bootstrap.min.css</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/src/core/header.jsp</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/src/pages/genero.jsp</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/src/core/meta.jsp</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/assets/css/styles.css</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/src/pages/emprestimo.jsp</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/src/core/footer.jsp</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/index.jsp</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/src/pages/main.jsp</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/T-Gamer/Desktop/btk-jsp/BTK_FRONTEND/web/src/pages/manageBooks.jsp</file>
->>>>>>> 9f947728b741bc1324dbe1712df41f3978ba9330
-        </group>
-    </open-files>
 </project-private>

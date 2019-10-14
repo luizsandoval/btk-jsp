@@ -1,3 +1,4 @@
+drop database btk;
 create database btk;
 use btk;
 
@@ -25,16 +26,6 @@ descricao varchar(100),
 PRIMARY KEY (id)
 );
 
-CREATE TABLE lessee (
-id int not null auto_increment,
-nome varchar(100) not null,
-telefone varchar(14),
-celular varchar(15),
-email varchar(80) not null,
-dataNasc varchar(10) not null,
-PRIMARY KEY (id)
-);
-
 CREATE TABLE book (
 id int not null auto_increment,
 nome varchar(100) not null,
@@ -54,6 +45,7 @@ CREATE TABLE loan(
 id int not null auto_increment,
 id_user int not null,
 id_lessee int not null,
+id_book int not null,
 dataEmprestimo varchar(10) not null,
 dataDevolucao varchar(10) not null,
 dataDevolucaoReal varchar(10),
@@ -62,7 +54,9 @@ PRIMARY KEY (id),
 FOREIGN KEY (id_user)
 REFERENCES user(id),
 FOREIGN KEY (id_lessee)
-REFERENCES lessee (id)
+REFERENCES user (id),
+FOREIGN KEY (id_book)
+REFERENCES book (id)
 );
 
 CREATE TABLE loan_items(

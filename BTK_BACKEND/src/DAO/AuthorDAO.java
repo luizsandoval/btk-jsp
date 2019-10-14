@@ -18,7 +18,7 @@ public class AuthorDAO {
     }
 
     public boolean create(AuthorBean author) {
-        final String sql = "insert into author(nome, sexo, nacionalidade, idade) value (?, ?, ?, ?)";
+        final String sql = "INSERT INTO author(nome, sexo, nacionalidade, idade) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
             
@@ -38,7 +38,7 @@ public class AuthorDAO {
     }
 
     public boolean edit(AuthorBean author) {
-        final String sql = "update author set nome = ?, sexo = ?, nacionalidade = ?, idade = ?, where id = ?";
+        final String sql = "UPDATE author SET nome = ?, sexo = ?, nacionalidade = ?, idade = ? WHERE id = ?";
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
 
@@ -63,7 +63,7 @@ public class AuthorDAO {
     }
 
     public boolean delete(AuthorBean author) {
-        final String sql = "delete from author where id = ?";
+        final String sql = "DELETE FROM author WHERE id = ?";
 
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
@@ -114,7 +114,7 @@ public class AuthorDAO {
     }
 
     public ArrayList<AuthorBean> listAll() {
-        final String sql = "select * from author";
+        final String sql = "SELECT * FROM author";
 
         ArrayList<AuthorBean> authors = new ArrayList<AuthorBean>();
 

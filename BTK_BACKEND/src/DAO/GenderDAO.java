@@ -18,7 +18,7 @@ public class GenderDAO {
     }
 
     public boolean create(GenderBean gender) {
-        final String sql = "insert into gender(nome, descricao) values(?, ?)";
+        final String sql = "INSERT INTO gender(nome, descricao) VALUES(?, ?)";
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
 
@@ -37,7 +37,7 @@ public class GenderDAO {
     }
 
     public boolean edit(GenderBean gender) {
-        final String sql = "update gender set nome = ?, descricao = ? where id = ?";
+        final String sql = "UPDATE gender SET nome = ?, descricao = ? WHERE id = ?";
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
             ps.setString(1, gender.getNome());
@@ -56,7 +56,7 @@ public class GenderDAO {
     }
 
     public boolean delete(GenderBean gender) {
-        final String sql = "delete from gender where id = ?";
+        final String sql = "DELETE FROM gender WHERE id = ?";
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);
 
@@ -100,7 +100,7 @@ public class GenderDAO {
     }
 
     public ArrayList<GenderBean> listAll() {
-        final String sql = "select * from gender order by -gender.id";
+        final String sql = "SELECT * FROM gender ORDER BY -gender.id";
 
         ArrayList<GenderBean> genders = new ArrayList<GenderBean>();
         try {

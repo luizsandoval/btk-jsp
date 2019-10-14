@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                     <label for="filterGender">Filtrar</label>
-                    <input name="filterGender" autofocus type="text" class="form-control" placeholder="Digite o nome do Gênero..."/>
+                    <input name="filterGender" autofocus type="text" class="form-control" placeholder="Digite qualquer coisa..." onkeyup="filterValues('genders', event)"/>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <a class="btn btn-block btn-primary btn-entrar top-gutter" href="./keepGender.jsp">Adicionar Gênero</a>
@@ -28,7 +28,7 @@
             <div class="row mt-4">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class='table-responsive'>
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="gendersTable">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>

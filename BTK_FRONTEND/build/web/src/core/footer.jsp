@@ -5,9 +5,13 @@
     <script src="../../assets/js/jquery-3.3.1.slim.min.js"></script>
     <script src="../../assets/js/popper.min.js"></script>
     <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/datatable/datatables.min.js"></script>
+
     <script>
-        let overlay = document.getElementById('overlay');
-        let menu = document.getElementById('menu');
+        const overlay = document.getElementById('overlay');
+        const menu = document.getElementById('menu');
+
+        $(document).ready(() => initTables('genders'));
 
         overlay.addEventListener('click', () => closeMenu());
 
@@ -24,6 +28,16 @@
         function logout() {
             window.location.href = "http://localhost:8080/BTK_FRONTEND/src/pages/login.jsp?action=logout";
         }
+
+        function filterValues(tableName, e) {
+            $(this.getTableName(tableName)).DataTable().search(e.target.value).draw();
+        }
+
+        function initTables(...tables) {
+            tables.forEach(table => $(this.getTableName(table)).DataTable({"dom": 'lrtip'}));
+        }
+
+        getTableName = (tableName) => "#" + tableName + "Table";
 
     </script>
 </footer>

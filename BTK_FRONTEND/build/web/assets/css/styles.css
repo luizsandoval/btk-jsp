@@ -289,10 +289,6 @@ a.unstyled-link:hover {
     margin-bottom: 30px;
 }
 
-*:invalid{
-    border-color: red;
-}
-
 form {
     box-shadow: var(--elevation-effect);
     padding: 30px;
@@ -313,4 +309,8 @@ select {
 
 .table th {
     border-top: none;
+}
+
+div.card {
+    box-shadow: var(--elevation-effect);
 }
