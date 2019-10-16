@@ -46,9 +46,9 @@ id int not null auto_increment,
 id_user int not null,
 id_lessee int not null,
 id_book int not null,
-dataEmprestimo varchar(10) not null,
-dataDevolucao varchar(10) not null,
-dataDevolucaoReal varchar(10),
+dataEmprestimo date not null,
+dataDevolucao date not null,
+dataDevolucaoReal date,
 loanStatus varchar(10) not null,
 PRIMARY KEY (id),
 FOREIGN KEY (id_user)
@@ -58,21 +58,3 @@ REFERENCES user (id),
 FOREIGN KEY (id_book)
 REFERENCES book (id)
 );
-
-CREATE TABLE loan_items(
-id_book int not null,
-quantidade int not null,
-id_loan int not null,
-FOREIGN KEY (id_book)
-REFERENCES book(id),
-FOREIGN KEY (id_loan)
-REFERENCES loan(id)
-);
-
-select * from user;
-select * from author;
-select * from gender;
-select * from lessee;
-select * from book;
-select * from loan;
-select * from loan_items;
