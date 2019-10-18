@@ -30,7 +30,7 @@
         <%@include file="../../src/core/header.jsp" %>
 
         <div class="container-fluid p-5">
-            <form action="../methods/manterLivro.jsp" method="post">
+            <form action="../methods/manterLivro.jsp<%= request.getParameter("ID") != null ? "?ID=" + bb.getId() : "" %>" method="post">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="d-flex align-items-center justify-content-between form-header">

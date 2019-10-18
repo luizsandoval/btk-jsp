@@ -313,4 +313,5 @@ select {
 
 div.card {
     box-shadow: var(--elevation-effect);
+    cursor: pointer;
 }

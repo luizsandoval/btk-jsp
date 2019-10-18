@@ -3,13 +3,17 @@
 <%@page import="Controller.LoanController"%>
 
 <%
+
+    final int locatario = request.getParameter("LOCATARIO") != null ? Integer.parseInt(request.getParameter("LOCATARIO")) : 0;
+    final int livro = request.getParameter("LIVRO") != null ? Integer.parseInt(request.getParameter("LIVRO")) : 0;
+
     final LoanBean lb = new LoanBean(
             ((UserBean) session.getAttribute("loggedUser")).getId(),
-            Integer.parseInt(request.getParameter("LOCATARIO")),
-            Integer.parseInt(request.getParameter("LIVRO"))
+            locatario,
+            livro
     );
 
-    lb.setIdLivro(Integer.parseInt(request.getParameter("LIVRO")));
+    lb.setIdLivro(livro);
 
     final LoanController lc = new LoanController();
 

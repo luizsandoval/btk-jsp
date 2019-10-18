@@ -3,9 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Documents/FATEC/Dispositivos%20Moveis/btk-jsp/BTK_FRONTEND/web/src/core/footer.jsp</file>
-            <file>file:/E:/Documents/FATEC/Dispositivos%20Moveis/btk-jsp/BTK_FRONTEND/web/src/methods/manterEmprestimo.jsp</file>
-            <file>file:/E:/Documents/FATEC/Dispositivos%20Moveis/btk-jsp/BTK_FRONTEND/web/src/pages/keepLoan.jsp</file>
+            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/btk-jsp/BTK_FRONTEND/web/src/pages/keepGender.jsp</file>
+            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/btk-jsp/BTK_FRONTEND/web/src/methods/manterGenero.jsp</file>
+            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/btk-jsp/BTK_FRONTEND/web/src/core/footer.jsp</file>
+            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/btk-jsp/BTK_FRONTEND/web/src/methods/manterAutor.jsp</file>
+            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/btk-jsp/BTK_FRONTEND/web/src/pages/keepAuthor.jsp</file>
+            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/btk-jsp/BTK_FRONTEND/web/src/methods/manterLivro.jsp</file>
+            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/btk-jsp/BTK_FRONTEND/web/src/pages/keepBook.jsp</file>
+            <file>file:/C:/Users/luiz.sandoval/OneDrive%20-%20Dimension%20Data/FATEC/4%20Semestre/PDM/btk-jsp/BTK_FRONTEND/web/src/pages/main.jsp</file>
         </group>
     </open-files>
 </project-private>

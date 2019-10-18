@@ -46,7 +46,7 @@
                             <select name="LIVRO" class="form-control" required>
                                 <option value="" <%= lb.getIdLivro() == 0 ? "selected" : ""%>>Selecione um Livro...</option>
                                 <% for (BookBean book : books) {%>
-                                <option value="<%= book.getId()%>" <%= book.getId() == lb.getIdLivro() ? "selected" : ""%>><%= book.getNome()%></option>
+                                    <option value="<%= book.getId()%>" <%= book.getId() == lb.getIdLivro() ? "selected" : ""%>><%= book.getNome()%></option>
                                 <% }%>
                             </select>
                         </div>

@@ -38,6 +38,10 @@ public class LoanController {
     public ArrayList<LoanBean> buscarEmprestimosAtrasados() throws SQLException, ClassNotFoundException {
         return this.loanDAO.listLateLoans();
     }
+    
+    public ArrayList<LoanBean> buscarEmprestimosFinalizados() throws SQLException, ClassNotFoundException {
+        return this.loanDAO.listClosedLoans();
+    }
 
     public int buscarQuantidadeDeEmprestimos() throws SQLException, ClassNotFoundException {
         return this.loanDAO.getLoansQuantity();

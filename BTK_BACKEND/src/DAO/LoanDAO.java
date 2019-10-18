@@ -92,16 +92,16 @@ public class LoanDAO {
     }
 
     public ArrayList<LoanBean> listAllLoans() {
-        final String sql = "SELECT loan.id, user.nome AS user, lessee.nome AS lessee, book.nome AS book,"
-                + " loan.dataEmprestimo, loan.dataDevolucao, loan.dataDevolucaoReal, loan.loanStatus"
-                + " FROM loan AS loan"
-                + " INNER JOIN user AS user"
-                + " ON loan.id_user = user.id"
-                + " INNER JOIN lessee AS lessee"
-                + " ON loan.id_lessee = lessee.id"
-                + " INNER JOIN book AS book"
-                + " ON loan.id_book = book.id"
-                + " ORDER BY loan.id";
+        final String sql = "SELECT loan.id, render.nome AS render, lessee.nome AS lessee, book.nome AS book,\n"
+                + "                loan.dataEmprestimo, loan.dataDevolucao, loan.dataDevolucaoReal, loan.loanStatus\n"
+                + "                FROM loan AS loan\n"
+                + "                INNER JOIN user AS render\n"
+                + "                ON loan.id_user = render.id\n"
+                + "                INNER JOIN user AS lessee\n"
+                + "                ON loan.id_lessee = lessee.id\n"
+                + "                INNER JOIN book AS book\n"
+                + "                ON loan.id_book = book.id\n"
+                + "                ORDER BY loan.id";
 
         final ArrayList<LoanBean> loans = new ArrayList<LoanBean>();
         try {
@@ -114,13 +114,13 @@ public class LoanDAO {
                 while (rs.next()) {
                     LoanBean lb = new LoanBean(0, 0, 0);
                     lb.setId(rs.getInt("id"));
-                    lb.setNomeUsuario(rs.getString("user"));
+                    lb.setNomeUsuario(rs.getString("render"));
                     lb.setNomeLocatario(rs.getString("lessee"));
                     lb.setNomeLivro(rs.getString("book"));
                     lb.setStatus(rs.getString("loanStatus"));
                     lb.setDataEmprestimo(rs.getDate("dataEmprestimo"));
                     lb.setDataDevolucao(rs.getDate("dataDevolucao"));
-                    lb.setDataDevolucao(rs.getDate("dataDevolucaoReal"));
+                    lb.setDataDevolucaoReal(rs.getDate("dataDevolucaoReal"));
 
                     loans.add(lb);
                 }
@@ -137,17 +137,17 @@ public class LoanDAO {
     }
 
     public ArrayList<LoanBean> listOpenLoans() {
-        final String sql = "SELECT loan.id, user.nome AS user, lessee.nome AS lessee, book.nome AS book,"
-                + " loan.dataEmprestimo, loan.dataDevolucao, loan.loanStatus"
-                + " FROM loan AS loan"
-                + " INNER JOIN user AS user"
-                + " ON loan.id_user = user.id"
-                + " INNER JOIN lessee AS lessee"
-                + " ON loan.id_lessee = lessee.id"
-                + " INNER JOIN book AS book"
-                + " ON loan.id_book = book.id"
-                + " WHERE loan.loanStatus = 'Em Aberto'"
-                + " ORDER BY loan.id";
+        final String sql = "SELECT loan.id, render.nome AS render, lessee.nome AS lessee, book.nome AS book,\n"
+                + "                loan.dataEmprestimo, loan.dataDevolucao, loan.dataDevolucaoReal, loan.loanStatus\n"
+                + "                FROM loan AS loan\n"
+                + "                INNER JOIN user AS render\n"
+                + "                ON loan.id_user = render.id\n"
+                + "                INNER JOIN user AS lessee\n"
+                + "                ON loan.id_lessee = lessee.id\n"
+                + "                INNER JOIN book AS book\n"
+                + "                ON loan.id_book = book.id\n"
+                + "                WHERE loan.loanStatus = 'Em Aberto'\n"
+                + "                ORDER BY loan.id";
 
         final ArrayList<LoanBean> loans = new ArrayList<LoanBean>();
         try {
@@ -160,7 +160,7 @@ public class LoanDAO {
                 while (rs.next()) {
                     LoanBean lb = new LoanBean(0, 0, 0);
                     lb.setId(rs.getInt("id"));
-                    lb.setNomeUsuario(rs.getString("user"));
+                    lb.setNomeUsuario(rs.getString("render"));
                     lb.setNomeLocatario(rs.getString("lessee"));
                     lb.setNomeLivro(rs.getString("book"));
                     lb.setStatus(rs.getString("loanStatus"));
@@ -182,17 +182,17 @@ public class LoanDAO {
     }
 
     public ArrayList<LoanBean> listLateLoans() {
-        final String sql = "SELECT loan.id, user.nome AS user, lessee.nome AS lessee, book.nome AS book,"
-                + " loan.dataEmprestimo, loan.dataDevolucao, loan.loanStatus"
-                + " FROM loan AS loan "
-                + " INNER JOIN user AS user"
-                + " ON loan.id_user = user.id"
-                + " INNER JOIN lessee AS lessee"
-                + " ON loan.id_lessee = lessee.id"
-                + " INNER JOIN book AS book"
-                + " ON loan.id_book = book.id"
-                + " WHERE DATEDIFF(loan.dataDevolucao, DATE(NOW())) < 0"
-                + " ORDER BY loan.id";
+        final String sql = "SELECT loan.id, render.nome AS render, lessee.nome AS lessee, book.nome AS book,\n"
+                + "                loan.dataEmprestimo, loan.dataDevolucao, loan.dataDevolucaoReal, loan.loanStatus\n"
+                + "                FROM loan AS loan\n"
+                + "                INNER JOIN user AS render\n"
+                + "                ON loan.id_user = render.id\n"
+                + "                INNER JOIN user AS lessee\n"
+                + "                ON loan.id_lessee = lessee.id\n"
+                + "                INNER JOIN book AS book\n"
+                + "                ON loan.id_book = book.id\n"
+                + "                WHERE loanStatus = 'Em Aberto' AND DATEDIFF(loan.dataDevolucao, DATE(NOW())) < 0\n"
+                + "                ORDER BY loan.id";
 
         final ArrayList<LoanBean> loans = new ArrayList<LoanBean>();
         try {
@@ -205,7 +205,7 @@ public class LoanDAO {
                 while (rs.next()) {
                     LoanBean lb = new LoanBean(0, 0, 0);
                     lb.setId(rs.getInt("id"));
-                    lb.setNomeUsuario(rs.getString("user"));
+                    lb.setNomeUsuario(rs.getString("render"));
                     lb.setNomeLocatario(rs.getString("lessee"));
                     lb.setNomeLivro(rs.getString("book"));
                     lb.setStatus(rs.getString("loanStatus"));
@@ -227,17 +227,17 @@ public class LoanDAO {
     }
 
     public ArrayList<LoanBean> listClosedLoans() {
-        final String sql = "SELECT loan.id, user.nome AS user, lessee.nome AS lessee, book.nome AS book,"
-                + " loan.dataEmprestimo, loan.dataDevolucao, loan.dataDevolucaoReal, loan.loanStatus"
-                + " FROM loan AS loan"
-                + " INNER JOIN user AS user"
-                + " ON loan.id_user = user.id"
-                + " INNER JOIN lessee AS lessee"
-                + " ON loan.id_lessee = lessee.id"
-                + " INNER JOIN book AS book"
-                + " ON loan.id_book = book.id"
-                + " WHERE loan.loanStatus = 'Finalizado'"
-                + " ORDER BY loan.id";
+        final String sql = "SELECT loan.id, render.nome AS render, lessee.nome AS lessee, book.nome AS book,\n"
+                + "                loan.dataEmprestimo, loan.dataDevolucao, loan.dataDevolucaoReal, loan.loanStatus\n"
+                + "                FROM loan AS loan\n"
+                + "                INNER JOIN user AS render\n"
+                + "                ON loan.id_user = render.id\n"
+                + "                INNER JOIN user AS lessee\n"
+                + "                ON loan.id_lessee = lessee.id\n"
+                + "                INNER JOIN book AS book\n"
+                + "                ON loan.id_book = book.id\n"
+                + "                WHERE loanStatus = 'Finalizado'\n"
+                + "                ORDER BY loan.id";
 
         final ArrayList<LoanBean> loans = new ArrayList<LoanBean>();
         try {
@@ -250,7 +250,7 @@ public class LoanDAO {
                 while (rs.next()) {
                     LoanBean lb = new LoanBean(0, 0, 0);
                     lb.setId(rs.getInt("id"));
-                    lb.setNomeUsuario(rs.getString("user"));
+                    lb.setNomeUsuario(rs.getString("render"));
                     lb.setNomeLocatario(rs.getString("lessee"));
                     lb.setNomeLivro(rs.getString("book"));
                     lb.setStatus(rs.getString("loanStatus"));
@@ -319,7 +319,7 @@ public class LoanDAO {
     }
 
     public int getLateLoansQuantity() {
-        final String sql = "SELECT COUNT(IF(DATEDIFF(dataDevolucao, DATE(NOW())) < 0, 1, NULL)) 'lateLoans' FROM loan";
+        final String sql = "SELECT COUNT(IF(DATEDIFF(dataDevolucao, DATE(NOW())) < 0 AND loanStatus='Em Aberto', 1, NULL)) 'lateLoans' FROM loan";
 
         try {
             PreparedStatement ps = this.CON.prepareStatement(sql);

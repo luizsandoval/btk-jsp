@@ -11,7 +11,7 @@
         const overlay = document.getElementById('overlay');
         const menu = document.getElementById('menu');
 
-        $(document).ready(() => initTables('genders'));
+        $(document).ready(() => initTables('genders', 'authors', 'books'));
 
         overlay.addEventListener('click', () => closeMenu());
 
@@ -34,10 +34,12 @@
         }
 
         function initTables(...tables) {
-            tables.forEach(table => $(this.getTableName(table)).DataTable({"dom": 'lrtip'}));
+            tables.forEach(table => $(this.getTableName(table)).DataTable({"dom": 'lrtip' }));
         }
 
         getTableName = (tableName) => "#" + tableName + "Table";
+
+        getLoans = type => window.location.href = "http://localhost:8080/BTK_FRONTEND/src/pages/main.jsp?TYPE=" + String(type);
 
     </script>
 </footer>

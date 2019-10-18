@@ -1,6 +1,6 @@
 <%@page import="Controller.GenderController"%>
 <%@page import="Model.GenderBean"%>
-<%@include file="../methods/verificarUsuarioLogado.jsp" %>
+
 <%
     final GenderBean gb = new GenderBean(
             request.getParameter("NOME"),
@@ -12,7 +12,7 @@
 
         gb.setId(Integer.parseInt(request.getParameter("ID")));
 
-        if (request.getParameter("ACTION").equals("DELETE")) {
+        if (request.getParameter("ACTION") != null && request.getParameter("ACTION").equals("DELETE")) {
             gc.removerGenero(gb);
         } else {
             gc.editarGenero(gb);
